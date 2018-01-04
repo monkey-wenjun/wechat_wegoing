@@ -60,7 +60,7 @@ def main():
         "use_time": 120
     }
     req = session.post(
-        'https://game.weixin.qq.com/cgi-bin/gametetrisws/syncgame?session_id={}'.format(sessionid), # -YshwPOL-fhLLVx4J-ZMZg@oUrsf0ZOGL3v8wdTRJagTeFtsNtk
+        'https://game.weixin.qq.com/cgi-bin/gametetrisws/syncgame?session_id={}'.format(sessionid),
         data=json.dumps(data),
         headers = headers
     )
