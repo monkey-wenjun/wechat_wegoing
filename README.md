@@ -20,7 +20,8 @@
 * 基础的python(3)知识等。
 
 ## 程序依赖库
-  ！！！python36
+  !!!python36
+  
   requests
 
 ## 使用方法
