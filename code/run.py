@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2018/1/4 20:44
+# @Author  : Mocha Lee
+# @Email   : 1446684220@qq.com
+# @File    : 1.py
+# @Software: PyCharm Community Edition
+
+
 import requests
 import json
 
@@ -63,8 +71,12 @@ def main():
         'https://game.weixin.qq.com/cgi-bin/gametetrisws/syncgame?session_id={}'.format(sessionid),
         data=json.dumps(data),
         headers = headers
-    )
-    print(req.content)
+    ).json()
+    print(req)
+    if req.get('errcode', -1) == 0:
+        print('success!')
+    else:
+        print('sorry, some error happend! please contact the author.')
 
 
 if __name__ == '__main__':
