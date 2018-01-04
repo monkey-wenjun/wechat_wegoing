@@ -44,6 +44,7 @@
 ![](https://github.com/Mocha-L/wechat_wegoing/blob/master/image/gamejs.png)
 
 * 还有疑问请提issues或者关注微信公众号“燕幕自安”获取我的联系方式，欢迎关注！
+
 ![](https://github.com/Mocha-L/Fitness_wxApp/blob/master/res/my_qr2.jpg)
 
 
