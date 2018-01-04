@@ -13,7 +13,7 @@
 
 ## 效果
 
-![](https://github.com/Mocha-L/wechat_wegoing/blob/master/image/my_score.jpg)
+![](https://github.com/Mocha-L/wechat_wegoing/blob/master/image/my_score.png)
 
 ## 前提条件
 * 掌握基本的抓包方法（如果有不会的看这里：[HTTPS抓包](http://mp.weixin.qq.com/s/JxJWZk-uMMjLcLQFTQ7thA)、[HTTPS抓包Fiddler4](http://mp.weixin.qq.com/s/dwJCfcPLY2Nxf_R8O4R__A)，如遇到证书验证导致无法抓包的问题的话看这个[安卓关闭证书验证](https://mp.weixin.qq.com/s/vA7u2f8NXiDW--IU50e_cQ)）
