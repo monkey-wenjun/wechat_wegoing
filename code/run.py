@@ -77,6 +77,7 @@ def main():
         print('success!')
     else:
         print('sorry, some error happend! please contact the author.')
+    input('run over.')
 
 
 if __name__ == '__main__':
