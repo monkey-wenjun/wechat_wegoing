@@ -12,6 +12,8 @@ import json
 session = requests.session()
 APPID = 'wx7a727ff7d940bb3f'
 
+# 禁用安全请求警告
+requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
 def get_packet():
     '''该函数用来获取小程序包'''
@@ -24,7 +26,8 @@ def get_packet():
     }
     req = session.get(
         'https://res.servicewechat.com/weapp/release/wx7a727ff7d940bb3f/14.wxapkg?rand=1192033587&pass_key=UfkTXX5U0A-gr6mad_49Evw8qNKn9vNZCNIoPclz0VuHT6w6Cx8U_rbKQCUU-41O9vy2dqBGFn1I0-ydGEgYcEhWR02MgE9OK8CdDP1jiA43dCEhZnPTH5tAiW1AbN2E&ext_code=hQfMJjqOYIY0fk6CDERUQCZm2DNaZJe9Nf4nNrWu-Dg',
-        headers=headers
+        headers=headers,
+        verify=False
     )
     with open('wx7a727ff7d940bb3f.wxapkg', 'wb+') as f:
         f.write(req.content)
@@ -47,15 +50,16 @@ def get_sig(score_list):
 def main():
     sessionid = input('please input sessionid:')
     headers = {
-        'charset': 'utf-8',
-        'Accept-Encoding': 'gzip',
-        'referer': 'https://servicewechat.com/wx7a727ff7d940bb3f/14/page-frame.html',
-        'content-type': 'application/json',
-        'User-Agent': 'MicroMessenger/6.6.1.1220(0x26060133) NetType/WIFI Language/zh_CN'
+        'Accept-Encoding': 'br, gzip, deflate',
+        'Accept-Language': 'zh-cn',
+        'Accept': '*/*',
+        'Referer': 'https://servicewechat.com/wx7a727ff7d940bb3f/23/page-frame.html',
+        'Content-Type': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C153 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN'
     }
     # score_list = [{"key":"newscore","value":1800},{"key":"level","value":109},{"key":"baoshi","value":0},{"key":"combo","value":8}]
     score_list = [
-        {"key": "newscore", "value": 232800},
+        {"key": "newscore", "value": 233000},
         {"key": "level", "value": 334},
         {"key": "baoshi", "value": 233},
         {"key": "combo", "value": 233}
@@ -67,10 +71,13 @@ def main():
         "sig": get_sig(score_list),
         "use_time": 120
     }
+    url = 'https://game.weixin.qq.com/cgi-bin/gametetrisws/syncgame?session_id={}'.format(sessionid)
+    print('url: ',url)
     req = session.post(
-        'https://game.weixin.qq.com/cgi-bin/gametetrisws/syncgame?session_id={}'.format(sessionid),
+        url,
         data=json.dumps(data),
-        headers = headers
+        headers = headers,
+        verify=False
     ).json()
     print(req)
     if req.get('errcode', -1) == 0:
