@@ -56,9 +56,14 @@
 * 如果还有不明白的可以参考/game_package/wx7a727ff7d940bb3f.wxapkg.unpack/game.js文件，大致在1700行。如下：
 ![](https://github.com/Mocha-L/wechat_wegoing/blob/master/image/gamejs.png)
 
-* 还有疑问请提issues或者关注微信公众号“燕幕自安”获取我的联系方式，欢迎关注！
+# 联系我
+如果还有疑问，请通过以下方式联系我
+* 提issues
+* 关注微信公众号“燕幕自安”获取我的联系方式
+* 加入我的QQ交流群（扫描下方二维码或搜索群号码579737590），大家帮助你解决问题
 
-![](https://github.com/Mocha-L/Fitness_wxApp/blob/master/res/my_qr2.jpg)
+![QQ群](https://github.com/Mocha-L/wechat_wegoing/blob/master/image/qq.png)
+![公众号](https://github.com/Mocha-L/Fitness_wxApp/blob/master/res/my_qr2.jpg)
 
 
 
