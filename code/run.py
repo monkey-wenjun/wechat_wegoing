@@ -48,7 +48,8 @@ def get_sig(score_list):
 
 
 def main():
-    sessionid = input('please input sessionid:')
+   
+    sessionid = raw_input('please input sessionid:')
     headers = {
         'Accept-Encoding': 'br, gzip, deflate',
         'Accept-Language': 'zh-cn',
